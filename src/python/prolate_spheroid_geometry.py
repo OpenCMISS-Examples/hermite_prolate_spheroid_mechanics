@@ -90,13 +90,13 @@ class ProlateSpheroid(object):
         else:
             elFactor = 1
         if group == 'base':
-            return [n for p, n in self.positionNode.iteritems()
+            return [n for p, n in self.positionNode.items()
                     if p[1] == self.numElements[1] * elFactor]
         elif group in ('internal', 'endocardium'):
-            return [n for p, n in self.positionNode.iteritems()
+            return [n for p, n in self.positionNode.items()
                     if p[2] == 0]
         elif group in ('external', 'epicardium'):
-            return [n for p, n in self.positionNode.iteritems()
+            return [n for p, n in self.positionNode.items()
                     if p[2] == self.numElements[2] * elFactor]
         else:
             raise ValueError("Invalid node group: %s" % group)
